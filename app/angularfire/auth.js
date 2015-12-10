@@ -1,7 +1,7 @@
 // let's create a re-usable factory that generates the $firebaseAuth instance
 app.factory("Auth", ["$firebaseAuth",
   function($firebaseAuth) {
-    var ref = new Firebase("https://dampinterest.firebaseio.com");
+    var ref = new Firebase("https://greetings.firebaseio.com");
     return $firebaseAuth(ref);
   }
 ]);
