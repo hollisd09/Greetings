@@ -1,15 +1,21 @@
-#content {
+#content, #iconArtBar {
   width: 200px;
   height: 200px;
   border: 1px solid black;
   margin-left: 40px;
 }
 
-#makeMeDraggable {
+#makeMeDraggable, #clickToAppend {
   width: 20px;
   height: 20px;
   background: red;
   border: 1px solid red
+}
+
+.btn:hover, .btn-rem:hover{
+  background:#c0392b;
+  border-bottom:4px solid #c0392b;
+  cursor:pointer;
 }
 
 .welcomePage {

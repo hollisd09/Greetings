@@ -49,7 +49,6 @@ angular.module('greetingsApp')
               $scope.logInNav = true;
               $scope.$apply();
             }
-      console.log("Name: ", $scope.firstName);
           }); 
 
     var ref = new Firebase("https://greetings.firebaseio.com");
