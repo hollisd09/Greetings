@@ -1,20 +1,25 @@
-#content, #iconArtBar {
-  width: 200px;
-  height: 200px;
+#content {
+  display: inline-block;
+  width: 800px;
+  height: 600px;
   border: 1px solid black;
-  margin-left: 40px;
 }
 
-#makeMeDraggable, #clickToAppend {
+#iconArtBar {
+  display: inline-block;
+  height: 600px;
+  border: 1px solid black;
+  float: right;
+}
+
+/*.makeMeDraggable, #clickToAppend {
   width: 20px;
   height: 20px;
   background: red;
   border: 1px solid red
-}
+}*/
 
 .btn:hover, .btn-rem:hover{
-  background:#c0392b;
-  border-bottom:4px solid #c0392b;
   cursor:pointer;
 }
 
