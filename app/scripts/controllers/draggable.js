@@ -1,5 +1,9 @@
-angular
+var app = angular
   .module('greetingsApp')
+  // .controller('YourCardsCtrl', ["jquery",
+	 //  function($) {
+	 //    console.log("maybe things will work");
+  // }])
   .directive('draggable', function($document) {
 	  return function(scope, element, attr) {
 	    var startX = 0, startY = 0, x = 0, y = 0;
@@ -33,7 +37,13 @@ angular
 	      $document.off('mousemove', mousemove);
 	      $document.off('mouseup', mouseup);
 	    }
+
+			$(function() {
+		    $("#makeMeDraggable").draggable ({ 
+		    	containment: "#content", 
+		    	scroll: false 
+		    });
+		  });
+	    
 	  };
   })
-  	
-    

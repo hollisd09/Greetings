@@ -6,21 +6,22 @@ app.factory("Auth", ["$firebaseAuth",
   }
 ]);
 
+
 app.controller("LoginCtrl", ["$scope", "Auth",
   function($scope, Auth) {
 
-    $scope.removeUser = function() {
-      $scope.message = null;
-      $scope.error = null;
+    // $scope.removeUser = function() {
+    //   $scope.message = null;
+    //   $scope.error = null;
 
-      Auth.$removeUser({
-        email: $scope.email,
-        password: $scope.password
-      }).then(function() {
-        $scope.message = "User removed";
-      }).catch(function(error) {
-        $scope.error = error;
-      });
-    };
+    //   Auth.$removeUser({
+    //     email: $scope.email,
+    //     password: $scope.password
+    //   }).then(function() {
+    //     $scope.message = "User removed";
+    //   }).catch(function(error) {
+    //     $scope.error = error;
+    //   });
+    // };
   }
 ]);

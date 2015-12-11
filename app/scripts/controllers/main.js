@@ -1,7 +1,7 @@
 angular.module('greetingsApp')
-  .controller('MainCtrl', ["$scope", "Auth", "$location", "getUid",
+  .controller('MainCtrl', ["$scope", "Auth", "$location", "getUid", "$firebaseAuth",
   
-  function($scope, Auth, $location, getUid) {
+  function($scope, Auth, $location, getUid, $firebaseAuth) {
     $scope.createUser = function() {
       $scope.message = null;
       $scope.error = null;
@@ -12,6 +12,7 @@ angular.module('greetingsApp')
       }).then(function(userData) {
         console.log("things", userData)
         $scope.message = "User created with uid: " + userData.uid;
+        $scope.loginUser();
         getUid.addUid(userData.uid);
         console.log("getUid.addUid(userData.uid)", getUid.addUid(userData.uid));
         $location.path("/yourCards");
@@ -48,8 +49,20 @@ angular.module('greetingsApp')
               $scope.logInNav = true;
               $scope.$apply();
             }
-          });    
-    };
+          }); 
 
+    var ref = new Firebase("https://greetings.firebaseio.com");
+    $scope.authObj = $firebaseAuth(ref);
+
+
+    $scope.authObj.$onAuth(function (authData) {
+      if (authData) {
+        $location.path('/yourCards');
+        console.log("wat the fuq");
+      } else {
+        console.log("Logged out");
+      }
+    })   
+    };
   }
 ]);

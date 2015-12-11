@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="app/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="app/sass/main.scss">
   </head>
   <body ng-app="greetingsApp">
     
@@ -23,7 +24,8 @@
                 <li class="active"><a href="#/yourCards">Your Cards</a></li>
                 <li class="active"><a href="#/newCard">New Card</a></li>
                 <li class="active"><a href="#/inspiration">Inspiration</a></li>
-              </ul>             
+                <li><a href="#/" ng-click="NavBarCtrl.logOut()">Logout</a></li>
+              </ul>            
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </div>
@@ -37,6 +39,8 @@
 
     <script src="lib/bower_components/angular/angular.min.js"></script>
     <script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bower_components/jquery-ui/jquery-ui.min.js"></script>
+
     <script src="lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="lib/bower_components/angular-route/angular-route.js"></script>
     <script src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
@@ -52,6 +56,10 @@
     <script src="app/scripts/controllers/inspiration.js"></script>
     <script src="app/scripts/controllers/navBar.js"></script>
     <script src="app/scripts/controllers/draggable.js"></script>
+    <script src="app/scripts/controllers/birthday.js"></script>
+    <script src="app/scripts/controllers/christmas.js"></script>
+    <script src="app/scripts/controllers/newYear.js"></script>
+    <script src="app/scripts/controllers/valentines.js"></script>
     <script src="app/angularfire/auth.js"></script>
     <script src="app/angularfire/config.js"></script>
   </body>
