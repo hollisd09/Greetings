@@ -1,6 +1,31 @@
-.blankCard {
+#content {
   width: 200px;
   height: 200px;
   border: 1px solid black;
   margin-left: 40px;
+}
+
+#makeMeDraggable {
+  width: 20px;
+  height: 20px;
+  background: red;
+  border: 1px solid red
+}
+
+.welcomePage {
+	text-align: center;
+	margin-top: 350px;
+}
+
+.inputSection {
+	display: inline-block;
+	width: 200px;
+}
+
+input {
+	margin-bottom: 10px;
+}
+
+button.submitLogin {
+	margin-right: 5px;
 }

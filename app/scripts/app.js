@@ -25,8 +25,8 @@ var app = angular
       })
       .when('/valentines', {
         templateUrl: 'app/partials/newCardCreate.html',
-        controller: 'ValentinesCtrl',
-        controllerAs: 'valentines'
+        controller: 'draggable',
+        controllerAs: 'draggable'
       })
       .when('/christmas', {
         templateUrl: 'app/partials/newCardCreate.html',

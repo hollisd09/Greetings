@@ -1,10 +1,29 @@
-<div class="jumbotron">
+<div class="welcomePage jumbotron">
   <h1>Greetings</h1>
-  <p>
+  <section class="inputSection">
     <input class="emailInput" ng-model="email" type="email" name="email" placeholder="email">
     <input class="passwordInput" ng-model="password" type="password" name="password" placeholder="password">
-    <button ng-click="createUser()" class="submitLogin" type="submit">Register</button>
     <button ng-click="loginUser()" class="submitLogin" type="submit">Login</button>
-  </p>
+    <button type="button" data-toggle="modal" data-target="#newUserModal">New User?</button>
+  </section>
+</div>
 
+<!-- Modal -->
+<div class="modal fade" id="newUserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <input class="emailInput" ng-model="email" type="email" name="email" placeholder="email">
+		    <input class="passwordInput" ng-model="password" type="password" name="password" placeholder="password">
+		    <input class="nameInput" ng-model="name" type="text" placeholder="first name">
+      </div>
+      <div class="modal-footer">
+        <button ng-click="createUser()" class="submitLogin" type="submit" data-dismiss="modal">Continue</button>
+      </div>
+    </div>
+  </div>
 </div>
