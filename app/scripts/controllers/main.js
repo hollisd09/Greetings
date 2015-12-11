@@ -20,12 +20,12 @@ angular.module('greetingsApp')
         var ref = new Firebase("https://greetings.firebaseio.com/users/" + userData.uid);
         ref.set({
           bio: "blank",
-          name: "no name",
+          name: $scope.firstName,
           email: $scope.email,
           cards: false
         });
       }).catch(function(error) {
-        $scope.error = error;
+        $scope.error = "Email Taken!";
       });
     };
 
@@ -36,7 +36,7 @@ angular.module('greetingsApp')
       var ref = new Firebase("https://greetings.firebaseio.com");
           ref.authWithPassword({
             email    : $scope.email,
-            password : $scope.password
+            password : $scope.password,
           }, function(error, authData) {
             if (error) {
               console.log("Login Failed!", error);
@@ -49,6 +49,7 @@ angular.module('greetingsApp')
               $scope.logInNav = true;
               $scope.$apply();
             }
+      console.log("Name: ", $scope.firstName);
           }); 
 
     var ref = new Firebase("https://greetings.firebaseio.com");

@@ -6,6 +6,7 @@
     <button ng-click="loginUser()" class="submitLogin" type="submit">Login</button>
     <button type="button" data-toggle="modal" data-target="#newUserModal">New User?</button>
   </section>
+  <p ng-model="error">{{error}}</p>
 </div>
 
 <!-- Modal -->
@@ -19,7 +20,7 @@
       <div class="modal-body">
         <input class="emailInput" ng-model="email" type="email" name="email" placeholder="email">
 		    <input class="passwordInput" ng-model="password" type="password" name="password" placeholder="password">
-		    <input class="nameInput" ng-model="name" type="text" placeholder="first name">
+		    <input class="nameInput" ng-model="firstName" type="text" placeholder="first name">
       </div>
       <div class="modal-footer">
         <button ng-click="createUser()" class="submitLogin" type="submit" data-dismiss="modal">Continue</button>
