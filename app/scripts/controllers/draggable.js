@@ -5,15 +5,29 @@ angular
 		$('.btn').click(function(){
 		  var newItem = $(this).clone().appendTo("#content");
 		  $(newItem).addClass("makeMeDraggable");
-		  $(newItem).addClass("ui-draggable");
-		  $(newItem).addClass("ui-draggable-handle");
 
 			$(".makeMeDraggable").draggable ({ 
 		  	containment: "#content", 
-		  	scroll: false 
+		  	scroll: false,
+		  	stack: ".makeMeDraggable",
+		  	connectWith: "#deleteArea"
 		  });
+		  	console.log("On the interent no one knows you're a dog");
 		});
-		// $('.btn-rem').click(function(){
-		// $('#iframe1').contents().find('html').html("<h1>").remove();
-		// });
-  });
+
+    
+    $('#deleteArea').droppable( {
+	    accept: ".makeMeDraggable",
+	    drop: function(event, ui) {
+	    	ui.draggable.remove()
+		  },
+		});
+	});
+
+
+// 	    $('#trash').droppable({
+//         over: function(event, ui) {
+//             ui.draggable.remove();
+//         }
+//     });
+// });

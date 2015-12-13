@@ -20,28 +20,28 @@ var app = angular
       })
       .when('/inspiration', {
         templateUrl: 'app/partials/inspiration.html',
-        controller: 'InspirationCtrl',
-        controllerAs: 'inspiration'
+        controller: 'draggable',
+        controllerAs: 'draggable'
       })
       .when('/valentines', {
-        templateUrl: 'app/partials/newCardCreate.html',
+        templateUrl: 'app/partials/newCardValentines.html',
         controller: 'draggable',
         controllerAs: 'draggable'
       })
       .when('/christmas', {
         templateUrl: 'app/partials/newCardCreate.html',
-        controller: 'ChristmasCtrl',
-        controllerAs: 'christmas'
+        controller: 'draggable',
+        controllerAs: 'draggable'
       })
       .when('/birthday', {
         templateUrl: 'app/partials/newCardCreate.html',
-        controller: 'BirthdayCtrl',
-        controllerAs: 'birthday'
+        controller: 'draggable',
+        controllerAs: 'draggable'
       })
       .when('/newYear', {
         templateUrl: 'app/partials/newCardCreate.html',
-        controller: 'NewYearCtrl',
-        controllerAs: 'newYear'
+        controller: 'draggable',
+        controllerAs: 'draggable'
       })
       .otherwise({
         redirectTo: '/main'

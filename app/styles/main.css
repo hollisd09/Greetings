@@ -3,6 +3,7 @@
   width: 800px;
   height: 600px;
   border: 1px solid black;
+  position: relative;
 }
 
 #iconArtBar {
@@ -39,4 +40,14 @@ input {
 
 button.submitLogin {
 	margin-right: 5px;
+}
+
+#deleteArea {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: 1px solid red;
+  background: red;
 }
