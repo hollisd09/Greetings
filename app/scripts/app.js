@@ -43,6 +43,11 @@ var app = angular
         controller: 'draggable',
         controllerAs: 'draggable'
       })
+      .when('/viewCard', {
+        templateUrl: 'app/partials/viewCard.html',
+        controller: '',
+        controllerAs: ''
+      })
       .otherwise({
         redirectTo: '/main'
       });

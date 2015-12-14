@@ -12,22 +12,38 @@ angular
 		  	stack: ".makeMeDraggable",
 		  	connectWith: "#deleteArea"
 		  });
-		  	console.log("On the interent no one knows you're a dog");
 		});
-
-    
+		  	
     $('#deleteArea').droppable( {
 	    accept: ".makeMeDraggable",
 	    drop: function(event, ui) {
-	    	ui.draggable.remove()
+	    	ui.draggable.remove();
 		  },
+		});
+		
+		var specialElementHandlers = {
+			"#content": function(element, renderer) {
+				return true;
+				console.log("huh?");
+			},
+		};
+
+		var doc = new jsPDF('p', 'pt', 'letter');
+		doc.ellipse(40, 20, 10, 5);
+
+		$('.pdf').click(function() {
+			console.log("beginning of pdf function");
+			doc.fromHTML($('#content').get(0), 0, 622, {
+				'width': 800,
+				'elementHandlers': specialElementHandlers,
+			});
+			doc.output('datauri');
+			doc.save('Test.pdf');
 		});
 	});
 
 
-// 	    $('#trash').droppable({
-//         over: function(event, ui) {
-//             ui.draggable.remove();
-//         }
-//     });
-// });
+
+
+
+			
