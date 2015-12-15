@@ -1,6 +1,6 @@
 angular.module('greetingsApp')
   .controller('MainCtrl', ["$scope", "Auth", "$location", "getUid", "$firebaseAuth",
-  
+ 
   function($scope, Auth, $location, getUid, $firebaseAuth) {
     $scope.createUser = function() {
       $scope.message = null;
@@ -8,7 +8,7 @@ angular.module('greetingsApp')
       console.log('running');
       Auth.$createUser({
         email: $scope.email,
-        password: $scope.password
+        password: $scope.password,
       }).then(function(userData) {
         console.log("things", userData)
         $scope.message = "User created with uid: " + userData.uid;
