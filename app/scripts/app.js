@@ -10,8 +10,8 @@ var app = angular
       })
       .when('/yourCards', {
         templateUrl: 'app/partials/yourCards.html',
-        controller: 'YourCardsCtrl',
-        controllerAs: 'yourCards'
+        controller: 'appendable',
+        controllerAs: 'appendable'
       })
       .when('/newCard', {
         templateUrl: 'app/partials/newCard.html',

@@ -1,6 +1,6 @@
 angular
   .module('greetingsApp')
-  .controller('draggable', function() {
+  .controller('draggable', function($rootScope) {
 
 		$('.btn').click(function(){
 		  var newItem = $(this).clone().appendTo("#content");
@@ -21,29 +21,30 @@ angular
 		  },
 		});
 		
-		var specialElementHandlers = {
-			"#content": function(element, renderer) {
-				return true;
-				console.log("huh?");
-			},
-		};
+		// $(function() {
+		// 	$('.pdf').click(function() {
+		// 		$("#content").print();
+		// 		return (false);
+		// 		console.log("printed?");
+		// 	});
+		// });
 
-		var doc = new jsPDF('p', 'pt', 'letter');
-		doc.ellipse(40, 20, 10, 5);
+			$(function() { 
+		    $(".pdf").click(function() { 
+		    		$("#deleteArea").hide();
+		        html2canvas($("#content"), {
+		            onrendered: function(canvas) {
+		                $rootScope.canvas = canvas;
+		                // Convert and download as image 
+		                Canvas2Image.saveAsPNG(canvas); 
+		                // Clean up 
+		                //document.body.removeChild(canvas);
+		            }
+		        });
+		    });
+		}); 
+	
 
-		$('.pdf').click(function() {
-			console.log("beginning of pdf function");
-			doc.fromHTML($('#content').get(0), 0, 622, {
-				'width': 800,
-				'elementHandlers': specialElementHandlers,
-			});
-			doc.output('datauri');
-			doc.save('Test.pdf');
-		});
 	});
 
 
-
-
-
-			
