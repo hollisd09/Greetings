@@ -22,7 +22,7 @@ angular.module('greetingsApp')
           bio: "blank",
           name: $scope.firstName,
           email: $scope.email,
-          cards: false
+          cards: $scope.newCard
         });
       }).catch(function(error) {
         $scope.error = "Email Taken!";
