@@ -11,7 +11,6 @@ var app = angular
       .when('/yourCards', {
         templateUrl: 'app/partials/yourCards.html',
         controller: 'YourCardsCtrl',
-        controllerAs: 'YourCardsCtrl'
       })
       .when('/newCard', {
         templateUrl: 'app/partials/newCard.html',

@@ -20,22 +20,11 @@ angular
 	    	ui.draggable.remove();
 		  },
 		});
-		
-		// $(function() {
-		// 	$('.pdf').click(function() {
-		// 		$("#content").print();
-		// 		return (false);
-		// 		console.log("printed?");
-		// 	});
-		// });
 
 		$(".saveToProfile").click(function() {
 			var canvas;
 			$("#deleteArea").hide();
-	    html2canvas($("#content"), {
-	      onrendered: function(canvas) {
 	      	$scope.canvas = canvas.toDataURL("image/png");
-	          // Clean up 
 	          //document.body.removeChild(canvas);
 	        var uid = getUid.getUid()
 	        var ref = new Firebase("https://greetings.firebaseio.com/cards/" + uid);
@@ -43,8 +32,6 @@ angular
     			newref.$add({
           	cards: $scope.canvas
        	 	});
-	      }
-	    });
     });
 	}) 
 
