@@ -1,2 +1,5 @@
 <p ng-model="firstName">Hello, {{name}}!</p>
-<div id="img-out"></div>
+<div ng-repeat= "s in stuff">
+	<img ng-src={{s.cards}} />
+	<button class="pdf">Download PDF</button>
+</div>

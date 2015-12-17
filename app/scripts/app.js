@@ -10,8 +10,8 @@ var app = angular
       })
       .when('/yourCards', {
         templateUrl: 'app/partials/yourCards.html',
-        controller: 'appendable',
-        controllerAs: 'appendable'
+        controller: 'YourCardsCtrl',
+        controllerAs: 'YourCardsCtrl'
       })
       .when('/newCard', {
         templateUrl: 'app/partials/newCard.html',
@@ -20,28 +20,28 @@ var app = angular
       })
       .when('/inspiration', {
         templateUrl: 'app/partials/inspiration.html',
-        controller: 'draggable',
-        controllerAs: 'draggable'
+        controller: 'CreateCardCtrl',
+        controllerAs: 'CreateCardCtrl'
       })
       .when('/valentines', {
         templateUrl: 'app/partials/newCardValentines.html',
-        controller: 'draggable',
-        controllerAs: 'draggable'
+        controller: 'CreateCardCtrl',
+        controllerAs: 'CreateCardCtrl'
       })
       .when('/christmas', {
         templateUrl: 'app/partials/newCardCreate.html',
-        controller: 'draggable',
-        controllerAs: 'draggable'
+        controller: 'CreateCardCtrl',
+        controllerAs: 'CreateCardCtrl'
       })
       .when('/birthday', {
         templateUrl: 'app/partials/newCardCreate.html',
-        controller: 'draggable',
-        controllerAs: 'draggable'
+        controller: 'CreateCardCtrl',
+        controllerAs: 'CreateCardCtrl'
       })
       .when('/newYear', {
         templateUrl: 'app/partials/newCardCreate.html',
-        controller: 'draggable',
-        controllerAs: 'draggable'
+        controller: 'CreateCardCtrl',
+        controllerAs: 'CreateCardCtrl'
       })
       .when('/viewCard', {
         templateUrl: 'app/partials/viewCard.html',

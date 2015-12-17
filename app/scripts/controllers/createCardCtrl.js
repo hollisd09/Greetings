@@ -1,6 +1,6 @@
 angular
   .module('greetingsApp')
-  .controller('draggable', function($rootScope) {
+  .controller('CreateCardCtrl', function($scope, Auth, $firebaseArray, getUid, $rootScope) {
 
 		$('.btn').click(function(){
 		  var newItem = $(this).clone().appendTo("#content");
@@ -29,22 +29,24 @@ angular
 		// 	});
 		// });
 
-			$(function() { 
-		    $(".pdf").click(function() { 
-		    		$("#deleteArea").hide();
-		        html2canvas($("#content"), {
-		            onrendered: function(canvas) {
-		                $rootScope.canvas = canvas;
-		                // Convert and download as image 
-		                Canvas2Image.saveAsPNG(canvas); 
-		                // Clean up 
-		                //document.body.removeChild(canvas);
-		            }
-		        });
-		    });
-		}); 
-	
+		$(".saveToProfile").click(function() {
+			var canvas;
+			$("#deleteArea").hide();
+	    html2canvas($("#content"), {
+	      onrendered: function(canvas) {
+	      	$scope.canvas = canvas.toDataURL("image/png");
+	          // Clean up 
+	          //document.body.removeChild(canvas);
+	        var uid = getUid.getUid()
+	        var ref = new Firebase("https://greetings.firebaseio.com/cards/" + uid);
+	        var newref = $firebaseArray(ref)
+    			newref.$add({
+          	cards: $scope.canvas
+       	 	});
+	      }
+	    });
+    });
+	}) 
 
-	});
 
 
