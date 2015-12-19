@@ -1,6 +1,29 @@
 <p ng-model="firstName">Hello, {{name}}!</p>
 <div ng-repeat= "s in stuff">
 	<img id="card" ng-src={{s.cards}} />
-	<button class="pdf">Download PDF</button>
-	<button class="print">Print Card</button>
+	<button ng-click="savePNG()" class="savePNG">Download Card</button>
+	<button ng-click="printCard()" class="print">Print Card</button>
+	<button type="button" data-toggle="modal" data-target="#sendEmailModal" class="sendCard">Send Card</button>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="sendEmailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Send Email</h4>
+      </div>
+      <div class="modal-body">
+        <input class="emailInput" id="emailTo" type="email" name="email" placeholder="Their Email">
+        <input id="recepientName" type="text" name="email" placeholder="Recepient's Name">
+        <input class="subjectInput" id="emailFrom" type="text" placeholder="Subject">
+        <input class="messageInput" id="message" type="text" placeholder="Enter Message Here">
+      </div>
+      <div class="modal-footer">
+        <button id="sendEmail" ng-click="sendEmail()" type="submit" data-dismiss="modal">Send Email</button>
+      </div>
+    </div>
+  </div>
 </div>

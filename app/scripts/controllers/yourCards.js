@@ -10,23 +10,48 @@ angular
 		  	$scope.stuff = res;
 		  }),
 
-	  	$(".pdf").click(function() { 
-	  		console.log("it's working?");
-				$("#deleteArea").hide();
-		    html2canvas($("#card"), {
-		      onrendered: function(canvas) {
-		          $rootScope.canvas = canvas;
-	          // Clean up 
-		          Canvas2Image.saveAsPNG(canvas); 
-	          //document.body.removeChild(canvas);
-	      }
-	    });
-	   })
+  	$scope.savePNG = function() {
+	  	$(".savePNG").click(function() { 
+	  			html2canvas($("#card"), {
+	  				onrendered: function(canvas) {
+	  					theCanvas = canvas;
+			  			Canvas2Image.saveAsPNG(canvas);
+			  			console.log("click worked?");
+	  				},
+	  				allowTaint: true
+	  			})
+		   });
+	  },
 
-			$('.print').click(function() {
-				$("#content").print();
-				return (false);
-				console.log("printed?");
-			});
+		// // send email here
+		var recepientVal = $("#recepientName").val();
+		var subjectVal = $("#subject").val();
+		var messageVal = $("#message").val();
+		var emailToVal = $("#emailTo").val();
+		// // send email here
+		$("#sendEmail").click(function() {
+			$.ajax({
+			  type: “POST”,
+			  url: “https://mandrillapp.com/api/1.0/messages/send.json”,
+			  data: {
+			    ‘key’: ‘XwdD9jzlNOQI6IHnIFCfMg’,
+			    ‘message’: {
+			      ‘from_email’: ‘hollisd09@gmail.com’,
+			      ‘to’: [
+			          {
+			            ‘email’: emailToVal,
+			            ‘name’: recepientVal,
+			            ‘type’: ‘to’
+			          },
+			        ],
+			      ‘autotext’: ‘true’,
+			      ‘subject’: ‘YOUR SUBJECT HERE!’,
+			      ‘html’: ‘YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!’
+			    }
+			  }
+			 }).done(function(response) {
+			   console.log(response); // if you're into that sorta thing
+			 });
+		 })
 
   }]);	

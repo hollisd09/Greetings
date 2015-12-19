@@ -21,17 +21,23 @@ angular
 		  },
 		});
 
+
 		$(".saveToProfile").click(function() {
 			var canvas;
 			$("#deleteArea").hide();
+	    html2canvas($("#content"), {
+	      onrendered: function(canvas) {
 	      	$scope.canvas = canvas.toDataURL("image/png");
+	          // Clean up 
 	          //document.body.removeChild(canvas);
-	        var uid = getUid.getUid()
+	        var uid = getUid.getUid();
 	        var ref = new Firebase("https://greetings.firebaseio.com/cards/" + uid);
 	        var newref = $firebaseArray(ref)
     			newref.$add({
           	cards: $scope.canvas
        	 	});
+	      }
+	    });
     });
 	}) 
 
