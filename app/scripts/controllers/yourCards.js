@@ -32,21 +32,25 @@ angular
 		$("#sendEmail").click(function() {
 			$.ajax({
 			  type: “POST”,
-			  url: “https://mandrillapp.com/api/1.0/messages/send.json”,
+			  url: "https://mandrillapp.com/api/1.0/messages/send.json",
 			  data: {
-			    ‘key’: ‘XwdD9jzlNOQI6IHnIFCfMg’,
-			    ‘message’: {
-			      ‘from_email’: ‘hollisd09@gmail.com’,
-			      ‘to’: [
+			    'key': 'XwdD9jzlNOQI6IHnIFCfMg',
+			    'message': {
+			      'from_email': 'hollisd09@gmail.com',
+			      'to': [
 			          {
-			            ‘email’: emailToVal,
-			            ‘name’: recepientVal,
-			            ‘type’: ‘to’
+			            'email': emailToVal,
+			            'name': recepientVal,
+			            'type': 'to'
 			          },
 			        ],
-			      ‘autotext’: ‘true’,
-			      ‘subject’: ‘YOUR SUBJECT HERE!’,
-			      ‘html’: ‘YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!’
+			      'autotext': true,
+			      'subject': 'Greetings!',
+			      'html': messageVal
+			    }
+			    image: {
+			    	'name': '<img id="card" ng-src={{s.cards}} />',
+
 			    }
 			  }
 			 }).done(function(response) {
