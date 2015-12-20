@@ -22,7 +22,6 @@ angular.module('greetingsApp')
           bio: "blank",
           name: $scope.firstName,
           email: $scope.email,
-          cards: $scope.newCard
         });
       }).catch(function(error) {
         $scope.error = "Email Taken!";
@@ -71,3 +70,4 @@ angular.module('greetingsApp')
 
   }
 ]);
+
