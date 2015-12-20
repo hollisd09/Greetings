@@ -1,13 +1,32 @@
 <p ng-model="firstName">Hello, {{name}}!</p>
-<div ng-repeat= "s in stuff">
-	<img id="card" ng-src={{s.cards}} />
+<div ng-repeat= "s in stuff" class="userCard">
+	<img id="printable" ng-src={{s.cards}} />
 	<button ng-click="savePNG()" class="savePNG">Download Card</button>
-	<button ng-click="printCard()" class="print">Print Card</button>
-	<button type="button" data-toggle="modal" data-target="#sendEmailModal" class="sendCard">Send Card</button>
+<!-- 	<button ng-click="printCard()" class="print">Print Card</button> -->
+  <button data-toggle="modal" data-target="#deleteCardModal" class="deleteModal">Delete Card</button>
+<!-- 	<button type="button" data-toggle="modal" data-target="#sendEmailModal" class="sendCard">Send Card</button> -->
 </div>
 
 
-<!-- Modal -->
+
+<!-- Modal for Delete -->
+<div class="modal fade" id="deleteCardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Are you sure you want to delete your card?</h4>
+      </div>
+      <div class="modal-body">
+        <button class="deleteCard" type="button" data-dismiss="modal" ng-click="deleteCard()">Delete it!</button>
+        <button type="button" data-dismiss="modal">Maybe not...</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal for Save-->
 <div class="modal fade" id="sendEmailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

@@ -1,6 +1,6 @@
 angular.module('greetingsApp')
   .controller('MainCtrl', ["$scope", "Auth", "$location", "getUid", "$firebaseAuth",
- 
+
   function($scope, Auth, $location, getUid, $firebaseAuth) {
     $scope.createUser = function() {
       $scope.message = null;
@@ -34,35 +34,35 @@ angular.module('greetingsApp')
       $scope.error = null;
       console.log('running login');
       var ref = new Firebase("https://greetings.firebaseio.com");
-          ref.authWithPassword({
-            email    : $scope.email,
-            password : $scope.password,
-          }, function(error, authData) {
-            if (error) {
-              console.log("Login Failed!", error);
-              $scope.error = "Login Failed: " + error + ".";
-            } else {
-              console.log("Authenticated successfully with payload:", authData);
-              $scope.message = "Authenticated successfully: " + authData + ".";
-              getUid.addUid(authData.uid);
-              $location.path("/yourCards");
-              $scope.logInNav = true;
-              $scope.$apply();
-            }
-          }); 
+      ref.authWithPassword({
+        email    : $scope.email,
+        password : $scope.password,
+      }, function(error, authData) {
+        if (error) {
+          console.log("Login Failed!", error);
+          $scope.error = "Login Failed: " + error + ".";
+        } else {
+          console.log("Authenticated successfully with payload:", authData);
+          $scope.message = "Authenticated successfully: " + authData + ".";
+          getUid.addUid(authData.uid);
+          $location.path("/yourCards");
+          $scope.logInNav = true;
+          $scope.$apply();
+        }
+      }); 
 
-    var ref = new Firebase("https://greetings.firebaseio.com");
-    $scope.authObj = $firebaseAuth(ref);
+      var ref = new Firebase("https://greetings.firebaseio.com");
+      $scope.authObj = $firebaseAuth(ref);
 
 
-    $scope.authObj.$onAuth(function (authData) {
-      if (authData) {
+      $scope.authObj.$onAuth(function (authData) {
+        if (authData) {
         $location.path('/yourCards');
         console.log("wat the fuq");
       } else {
         console.log("Logged out");
-      }
-    })   
+        }
+      })   
     };
   }
 ]);
