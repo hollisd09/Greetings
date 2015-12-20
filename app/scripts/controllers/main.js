@@ -49,20 +49,25 @@ angular.module('greetingsApp')
           $scope.logInNav = true;
           $scope.$apply();
         }
-      }); 
-
-      var ref = new Firebase("https://greetings.firebaseio.com");
-      $scope.authObj = $firebaseAuth(ref);
-
-
-      $scope.authObj.$onAuth(function (authData) {
-        if (authData) {
-        $location.path('/yourCards');
-        console.log("wat the fuq");
-      } else {
-        console.log("Logged out");
-        }
-      })   
+      });
     };
+     
+    $scope.logout = function() {
+      $scope.authObj.$unauth();
+      console.log("Logged out");
+      $location.path("/main");
+    };
+
+    function authDataCallback(authData) {
+      if (authData) {
+        console.log("User " + authData.uid + " is logged in with " + authData.provider);
+      } else {
+        console.log("User is logged out");
+        }
+    }
+    // Register the callback to be fired every time auth state changes
+      var ref = new Firebase("https://greetings.firebaseio.com");
+      ref.onAuth(authDataCallback);
+
   }
 ]);

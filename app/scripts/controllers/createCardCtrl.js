@@ -2,9 +2,10 @@ angular
 	.module('greetingsApp')
 	.controller('CreateCardCtrl', function($scope, Auth, $firebaseArray, getUid, $rootScope) {
 
-		$('.btn').click(function(){
+		$(".btn").click(function(){
 			var newItem = $(this).clone().appendTo("#content");
 			$(newItem).addClass("makeMeDraggable");
+			$(newItem).removeClass("btn");
 
 			$(".makeMeDraggable").draggable ({ 
 				containment: "#content", 
@@ -12,7 +13,12 @@ angular
 				stack: ".makeMeDraggable",
 				connectWith: "#deleteArea"
 			});
+	    
+	    $(".resizeMe").resizable({
+	    	aspectRatio: 16 / 9,
+	    });
 		});
+
 
 		$('#deleteArea').droppable( {
 			accept: ".makeMeDraggable",
