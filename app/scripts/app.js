@@ -45,8 +45,8 @@ var app = angular
       })
       .when('/viewCard', {
         templateUrl: 'app/partials/viewCard.html',
-        controller: '',
-        controllerAs: ''
+        controller: 'ViewCardCtrl',
+        controllerAs: 'ViewCardCtrl'
       })
       .otherwise({
         redirectTo: '/main'
