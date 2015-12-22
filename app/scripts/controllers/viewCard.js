@@ -1,7 +1,7 @@
 angular
 	.module('greetingsApp')
-	.controller('ViewCardCtrl', ["$scope", "Auth", "$firebaseArray", "getUid", "$rootScope", "$routeParams",
-	function($scope, Auth, $firebaseArray, getUid, $rootScope, $routeParams) {
+	.controller('ViewCardCtrl', ["$scope", "Auth", "$firebaseArray", "getUid", "$rootScope", "$routeParams", "$location",
+	function($scope, Auth, $firebaseArray, getUid, $rootScope, $routeParams, $location) {
 		$scope.uid = $routeParams.uid;
 		$scope.card_id = $routeParams.card_id;
 		var uid = getUid.getUid();
@@ -20,24 +20,21 @@ angular
 		})
 
 
-$scope.savePNG = function() {
-		$(".savePNG").click(function() {
-	    Canvas2Image.saveAsPNG(document.getElementById("cardViewed")); 
-			console.log("this clicked, yes");
-		})
-	}
+	$scope.savePNG = function() {
+			$(".savePNG").click(function() {
+		    Canvas2Image.saveAsPNG(document.getElementById("cardViewed")); 
+				console.log("this clicked, yes");
+			})
+		}
 
-	$scope.deleteCard = function(s) {
-		$(document).on("click", ".deleteCard", function() {
-			$("#cardViewed").remove();
-		});
+	$scope.deleteCard = function() {
+
+		console.log("s", ref.child($scope.card_id));
+		var fb = new Firebase("https://greetings.firebaseio.com/cards/" + $scope.uid + "/" + $scope.card_id);
+		fb.remove();
 		console.log("delete working?");
+		$location.path("/yourCards");
 	}
-
-// 	$scope.remove = function(item) { 
-//   var index = $scope.bdays.indexOf(item);
-//   $scope.bdays.splice(index, 1);     
-// }
 
 
 	// $('.print').click(function() {
