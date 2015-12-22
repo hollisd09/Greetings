@@ -28,7 +28,7 @@ angular
 		});
 
 
-		$(".saveToProfile").click(function() {
+		$scope.saveToProfile = function() {
 			var canvas;
 			$("#deleteArea").hide();
 			html2canvas($("#content"), {
@@ -42,8 +42,8 @@ angular
 					});
 				}
 			});
-		});
-	})
+		};
+	});
 });	 
 
 

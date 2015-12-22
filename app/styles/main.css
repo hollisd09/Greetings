@@ -55,3 +55,8 @@ button.submitLogin {
 .makeMeDraggable {
   display: inline-block;
 }
+
+#printable {
+  width: 266px;
+  height: 233px;
+}

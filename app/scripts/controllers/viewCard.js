@@ -28,13 +28,13 @@ angular
 		}
 
 	$scope.deleteCard = function() {
-
 		console.log("s", ref.child($scope.card_id));
 		var fb = new Firebase("https://greetings.firebaseio.com/cards/" + $scope.uid + "/" + $scope.card_id);
 		fb.remove();
 		console.log("delete working?");
 		$location.path("/yourCards");
 	}
+
 
 
 	// $('.print').click(function() {
