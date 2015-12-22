@@ -43,10 +43,9 @@ var app = angular
         controller: 'CreateCardCtrl',
         controllerAs: 'CreateCardCtrl'
       })
-      .when('/viewCard', {
+      .when('/viewCard/:uid/:card_id', {
         templateUrl: 'app/partials/viewCard.html',
         controller: 'ViewCardCtrl',
-        controllerAs: 'ViewCardCtrl'
       })
       .otherwise({
         redirectTo: '/main'
