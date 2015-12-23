@@ -14,10 +14,11 @@ angular
 				connectWith: "#deleteArea"
 			});
 	    
-	 //    $(".resizeMe").resizable({
-	 //    	aspectRatio: 16 / 9,
-	 //    });
-		// });
+	    // $(".resizeMe").resizable({
+	    // 	aspectRatio: 16 / 9,
+	    // 	animate: true
+	    // });
+		});
 
 
 		$('#deleteArea').droppable( {
@@ -43,8 +44,7 @@ angular
 				}
 			});
 		};
-	});
-});	 
+	}); 
 
 
 
