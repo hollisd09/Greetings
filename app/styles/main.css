@@ -13,6 +13,7 @@
   border: 1px solid black;
   float: right;
   overflow-y: scroll;
+  width: 300px;
 }
 
 /*.makeMeDraggable, #clickToAppend {

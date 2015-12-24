@@ -6,6 +6,22 @@ angular
 			var newItem = $(this).clone().appendTo("#content");
 			$(newItem).addClass("makeMeDraggable");
 			$(newItem).removeClass("btn");
+		
+			$(".makeMeDraggable").draggable ({ 
+				containment: "#content", 
+				scroll: false,
+				stack: ".makeMeDraggable",
+				connectWith: "#deleteArea"
+			});
+		});
+
+			
+			
+		$scope.appendText = function() {
+			var textItem = $(".cardText").val();
+			$(textItem).clone().appendTo("#content");
+			$(textItem).addClass("makeMeDraggable");
+			console.log("click worked?? WHO KNOWS");
 
 			$(".makeMeDraggable").draggable ({ 
 				containment: "#content", 
@@ -13,13 +29,7 @@ angular
 				stack: ".makeMeDraggable",
 				connectWith: "#deleteArea"
 			});
-	    
-	    // $(".resizeMe").resizable({
-	    // 	aspectRatio: 16 / 9,
-	    // 	animate: true
-	    // });
-		});
-
+		}
 
 		$('#deleteArea').droppable( {
 			accept: ".makeMeDraggable",
@@ -44,6 +54,7 @@ angular
 				}
 			});
 		};
+
 	}); 
 
 
