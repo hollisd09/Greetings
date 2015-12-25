@@ -6,6 +6,7 @@ angular
 			var newItem = $(this).clone().appendTo("#content");
 			$(newItem).addClass("makeMeDraggable");
 			$(newItem).removeClass("btn");
+			$(newItem).append('<a><span class="delete glyphicon glyphicon-trash"></span></a>')
 		
 			$(".makeMeDraggable").draggable ({ 
 				containment: "#content", 
@@ -13,35 +14,45 @@ angular
 				stack: ".makeMeDraggable",
 				connectWith: "#deleteArea"
 			});
-		});
-
 			
-			
-		$scope.appendText = function() {
-			var textItem = $(".cardText").val();
-			$(textItem).clone().appendTo("#content");
-			$(textItem).addClass("makeMeDraggable");
-			console.log("click worked?? WHO KNOWS");
-
-			$(".makeMeDraggable").draggable ({ 
-				containment: "#content", 
-				scroll: false,
-				stack: ".makeMeDraggable",
-				connectWith: "#deleteArea"
+			$(".glyphicon-trash").hide();
+			$(".makeMeDraggable").hover(function() {
+				$(this).find(".glyphicon-trash").show();
 			});
-		}
 
-		$('#deleteArea').droppable( {
-			accept: ".makeMeDraggable",
-			drop: function(event, ui) {
-				ui.draggable.remove();
-			},
+			$(".glyphicon-trash").click(function() {
+				$(".makeMeDraggable").remove();
+			})
 		});
+
+
+			
+			
+		// $scope.appendText = function() {
+		// 	var textItem = $(".cardText").val();
+		// 	$(textItem).clone().appendTo("#content");
+		// 	$(textItem).addClass("makeMeDraggable");
+		// 	console.log("click worked?? WHO KNOWS");
+
+		// 	$(".makeMeDraggable").draggable ({ 
+		// 		containment: "#content", 
+		// 		scroll: false,
+		// 		stack: ".makeMeDraggable",
+		// 		connectWith: "#deleteArea"
+		// 	});
+		// }
+
+		// $('#deleteArea').droppable( {
+		// 	accept: ".makeMeDraggable",
+		// 	drop: function(event, ui) {
+		// 		ui.draggable.remove();
+		// 	},
+		// });
 
 
 		$scope.saveToProfile = function() {
 			var canvas;
-			$("#deleteArea").hide();
+			$(".glyphicon-trash").hide();
 			html2canvas($("#content"), {
 				onrendered: function(canvas) {
 					$scope.canvas = canvas.toDataURL("image/png");

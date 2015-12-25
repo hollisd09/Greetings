@@ -16,6 +16,12 @@
   width: 300px;
 }
 
+.delete, .glyphicon, .glyphicon-trash {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
 /*.makeMeDraggable, #clickToAppend {
   width: 20px;
   height: 20px;
