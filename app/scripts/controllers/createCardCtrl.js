@@ -6,7 +6,7 @@ angular
 			var newItem = $(this).clone().appendTo("#content");
 			$(newItem).addClass("makeMeDraggable");
 			$(newItem).removeClass("btn");
-			$(newItem).append('<a><span class="delete glyphicon glyphicon-trash"></span></a>')
+			$(newItem).append('<a><span ng-click="trashClick()" class="delete glyphicon glyphicon-trash"></span></a>')
 		
 			$(".makeMeDraggable").draggable ({ 
 				containment: "#content", 
@@ -16,14 +16,33 @@ angular
 			});
 			
 			$(".glyphicon-trash").hide();
-			$(".makeMeDraggable").hover(function() {
-				$(this).find(".glyphicon-trash").show();
-			});
+			$(".makeMeDraggable").on({
+				mouseover: function() {
+					$(this).find(".glyphicon-trash").show();
+				},
 
-			$(".glyphicon-trash").click(function() {
-				$(".makeMeDraggable").remove();
-			})
-		});
+				mouseout: function() {
+					$(this).find(".glyphicon-trash").hide();
+				}
+			});
+		}); 
+			
+		$scope.trashClick = function() {
+			$(this).find(".makeMeDraggable").remove();
+			console.log("works?");
+		}
+
+		$(".mark").on({
+    mouseover: function() {
+        $(".icontent").stop().show(1000);
+    },
+
+    mouseout: function() {
+        $(".icontent").stop().hide(1000);
+    }
+		
+		})
+
 
 
 			
@@ -65,8 +84,8 @@ angular
 				}
 			});
 		};
+	});
 
-	}); 
 
 
 
