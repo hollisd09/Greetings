@@ -20,53 +20,24 @@ angular
 				mouseover: function() {
 					$(this).find(".glyphicon-trash").show();
 				},
-
 				mouseout: function() {
 					$(this).find(".glyphicon-trash").hide();
 				}
 			});
 		}); 
-			
+
+		
+
 		$scope.trashClick = function() {
-			$(this).find(".makeMeDraggable").remove();
+			$(this).remove();
 			console.log("works?");
 		}
-
-		$(".mark").on({
-    mouseover: function() {
-        $(".icontent").stop().show(1000);
-    },
-
-    mouseout: function() {
-        $(".icontent").stop().hide(1000);
-    }
-		
-		})
-
-
-
-			
 			
 		// $scope.appendText = function() {
 		// 	var textItem = $(".cardText").val();
 		// 	$(textItem).clone().appendTo("#content");
 		// 	$(textItem).addClass("makeMeDraggable");
 		// 	console.log("click worked?? WHO KNOWS");
-
-		// 	$(".makeMeDraggable").draggable ({ 
-		// 		containment: "#content", 
-		// 		scroll: false,
-		// 		stack: ".makeMeDraggable",
-		// 		connectWith: "#deleteArea"
-		// 	});
-		// }
-
-		// $('#deleteArea').droppable( {
-		// 	accept: ".makeMeDraggable",
-		// 	drop: function(event, ui) {
-		// 		ui.draggable.remove();
-		// 	},
-		// });
 
 
 		$scope.saveToProfile = function() {
@@ -85,6 +56,11 @@ angular
 			});
 		};
 	});
+			
+
+
+
+			
 
 
 
