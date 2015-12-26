@@ -1,11 +1,14 @@
+<div class="plainBackground"><img src="../images/plainBackground.png" type="image"></div>
+
 <div class="viewCardAppend">
 	<img id="cardViewed" ng-src="{{cardLink}}" />
 </div>
 
-<button ng-click="savePNG()" class="savePNG">Download Card</button>
-<!-- 	<button ng-click="printCard()" class="print">Print Card</button> -->
-<button data-toggle="modal" data-target="#deleteCardModal" class="deleteModal">Delete Card</button>
-
+<div class="viewCardButtons">
+  <button ng-click="savePNG()" class="savePNG">Download Card</button>
+  <!-- 	<button ng-click="printCard()" class="print">Print Card</button> -->
+  <button data-toggle="modal" data-target="#deleteCardModal" class="deleteModal">Delete Card</button>
+</div>
 
 
   <!-- Modal for Delete -->
