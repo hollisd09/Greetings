@@ -12,7 +12,11 @@
   height: 100%;
 }
 
-
+.container {
+  margin: 0 auto 0 auto;
+  text-align: center;
+  width: 100%;
+}
 
 #content {
   display: inline-block;
@@ -24,13 +28,25 @@
   margin-top: 40px;
 }
 
+#backgroundBar {
+  display: inline-block;
+  height: 700px;
+  border: 1px solid #CCCBCB;
+  float: left;
+  overflow-y: scroll;
+  width: 100px;
+  background: white;
+  margin-top: 40px;
+  margin-right: 20px;
+}
+
 #iconArtBar {
   display: inline-block;
   height: 700px;
   border: 1px solid #CCCBCB;
   float: right;
   overflow-y: scroll;
-  width: 300px;
+  width: 400px;
   background: white;
   margin-top: 40px;
 }

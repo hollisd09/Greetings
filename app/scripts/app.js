@@ -29,7 +29,7 @@ var app = angular
         controllerAs: 'CreateCardCtrl'
       })
       .when('/christmas', {
-        templateUrl: 'app/partials/newCardCreate.html',
+        templateUrl: 'app/partials/newCardChristmas.html',
         controller: 'CreateCardCtrl',
         controllerAs: 'CreateCardCtrl'
       })

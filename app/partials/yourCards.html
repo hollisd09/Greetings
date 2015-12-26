@@ -4,8 +4,7 @@
 <div class="yourCardsContainer container-fluid">
   <div class="row">
     <div class="col-md-4" ng-repeat= "s in stuff" class="userCard">
-      <a href="#/viewCard/{{uid}}/{{s.$id}}" class="viewCard" ng-click="viewCard()"><img id="printable" ng-src={{s.cards}} /></a>
-<!--       <a href="#/viewCard/{{uid}}/{{s.$id}}" class="viewCard" ng-click="viewCard()">View Card</a> -->
+      <a href="#/viewCard/{{uid}}/{{s.$id}}" class="viewCard" ng-click="viewCard()"><img id="printable" ng-src={{s.cards}} />
     </div>
   </div>
 </div>
