@@ -6,13 +6,12 @@ angular
 			var newItem = $(this).clone().appendTo("#content");
 			$(newItem).addClass("makeMeDraggable");
 			$(newItem).removeClass("btn");
-			$(newItem).append('<a><span ng-click="trashClick()" class="delete glyphicon glyphicon-trash"></span></a>')
+			$(newItem).prepend('<a><span class="delete glyphicon glyphicon-trash"></span></a>')
 		
 			$(".makeMeDraggable").draggable ({ 
 				containment: "#content", 
 				scroll: false,
 				stack: ".makeMeDraggable",
-				connectWith: "#deleteArea"
 			});
 			
 			$(".glyphicon-trash").hide();
@@ -24,20 +23,41 @@ angular
 					$(this).find(".glyphicon-trash").hide();
 				}
 			});
+
+			$(".glyphicon-trash").click(function() {
+				$(this).parent().parent().remove();
+		 	})
 		}); 
 
-		
+		$scope.greetingsText = "";
 
-		$scope.trashClick = function() {
-			$(this).remove();
-			console.log("works?");
-		}
-			
-		// $scope.appendText = function() {
-		// 	var textItem = $(".cardText").val();
-		// 	$(textItem).clone().appendTo("#content");
-		// 	$(textItem).addClass("makeMeDraggable");
-		// 	console.log("click worked?? WHO KNOWS");
+		$scope.appendText = function() {
+			var textItem = "<div ng-style='textColor' class='textToAppend'>" + $(".cardText").val() + "</div>";
+			$("#content").append(textItem);
+			$(".textToAppend").addClass("makeMeDraggable");
+			$(".textToAppend").append('<a><span class="delete glyphicon glyphicon-trash"></span></a>')
+			console.log("click worked?? WHO KNOWS");
+
+			$(".makeMeDraggable").draggable ({ 
+				containment: "#content", 
+				scroll: false,
+				stack: ".makeMeDraggable",
+			});
+
+			$(".glyphicon-trash").hide();
+			$(".textToAppend").on({
+				mouseover: function() {
+					$(this).find(".glyphicon-trash").show();
+				},
+				mouseout: function() {
+					$(this).find(".glyphicon-trash").hide();
+				}
+			});
+
+			$(".glyphicon-trash").click(function() {
+				$(this).parent().parent().remove();
+		 	})
+		};
 
 
 		$scope.saveToProfile = function() {
@@ -55,8 +75,7 @@ angular
 				}
 			});
 		};
-	});
-			
+});			
 
 
 

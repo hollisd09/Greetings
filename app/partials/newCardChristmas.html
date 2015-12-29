@@ -3,21 +3,45 @@
 <div class="container">
 	
 	<div id="backgroundBar">
-	  <a ng-click="backgroundColor={background:'red'}">Red</a>
-	  <a ng-click="backgroundColor={background:'#FAAA49'}">Orange</a>
-	  <a ng-click="backgroundColor={background:'#3C7AB2'}">Blue</a>
-	  <a ng-click="backgroundColor={background:'#FFEDA1'}">Yellow</a>
-	  <a ng-click="backgroundColor={background:'#1C9360'}">Green</a>
-	  <a ng-click="backgroundColor={background:'magenta'}">Magenta</a>
-	  <a ng-click="backgroundColor={background:'#B0DDED'}">Light Blue</a>
-	  <a ng-click="backgroundColor={background:'white'}">White</a> 
+	  <div class="backgroundColors">
+	  	<h4>Choose a background color!</h4>
+	  	<ul class="colorClick">
+			  <li><a ng-click="backgroundColor={background:'red'}">Red</a></li>
+			  <li><a ng-click="backgroundColor={background:'#FAAA49'}">Orange</a></li>
+			  <li><a ng-click="backgroundColor={background:'#3C7AB2'}">Blue</a></li>
+			  <li><a ng-click="backgroundColor={background:'#FFEDA1'}">Yellow</a></li>
+			  <li><a ng-click="backgroundColor={background:'#1C9360'}">Green</a></li>
+			  <li><a ng-click="backgroundColor={background:'magenta'}">Magenta</a></li>
+			  <li><a ng-click="backgroundColor={background:'#B0DDED'}">Light Blue</a></li>
+			  <li><a ng-click="backgroundColor={background:'white'}">White</a></li>
+		  </ul>
+	  </div>
+	  <div class="textAppendColor">
+	  <h4>Add some text!</h4>
+			<span>
+				<input ng-model="greetingsText"class="cardText" type="text" placeholder="Say something nice!">
+			</span>
+		<h4>Style your text!</h4>
+			<ul class="colorClick">
+			  <li><a ng-click="textColor={color:'red'}">Red</a></li>
+			  <li><a ng-click="textColor={color:'#FAAA49'}">Orange</a></li>
+			  <li><a ng-click="textColor={color:'#3C7AB2'}">Blue</a></li>
+			  <li><a ng-click="textColor={color:'#FFEDA1'}">Yellow</a></li>
+			  <li><a ng-click="textColor={color:'#1C9360'}">Green</a></li>
+			  <li><a ng-click="textColor={color:'magenta'}">Magenta</a></li>
+			  <li><a ng-click="textColor={color:'#B0DDED'}">Light Blue</a></li>
+			  <li><a ng-click="textColor={color:'white'}">White</a></li>
+		  </ul>
+		<h5>Text preview</h5>
+			<div ng-style="textColor" class="previewText"> {{greetingsText}} </div>
+		</div>
+		<button ng-click="appendText()">Add text</button>
 	</div>
 
 	<div id="content" ng-style="backgroundColor">
 	</div>
 
 	<div id="iconArtBar">
-		<span><input class="cardText" type="text" placeholder="Say something nice!"><button class="appendText">Add text</button></span>
 		<div class="btn"><img src="../images/snowman.png" type="image" id="clickToAppend"></div>
 		<div class="btn"><img src="../images/tree.png" type="image" id="clickToAppend"></div>
 		<div class="btn"><img src="../images/present.png" type="image" id="clickToAppend"></div>
