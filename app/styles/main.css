@@ -68,6 +68,18 @@
   font-family: 'Work Sans', 'sans-serif';
 }
 
+.smallSize {
+  font-size: 12px;
+}
+
+.mediumSize {
+  font-size: 30px;
+}
+
+.largeSize {
+  font-size: 50px;
+}
+
 #iconArtBar {
   display: inline-block;
   height: 700px;

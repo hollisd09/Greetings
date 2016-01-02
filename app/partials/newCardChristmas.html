@@ -36,12 +36,17 @@
 		  <input type="checkbox" ng-model="cursive">
 		  <input type="checkbox" ng-model="boldText">
 		  <input type="checkbox" ng-model="thinText">
+
+		  <h4>Choose a size!</h4>
+		  <input type="checkbox" ng-model="small">
+		  <input type="checkbox" ng-model="medium">
+		  <input type="checkbox" ng-model="large">
 		</div>
 		<button ng-click="appendText()">Add text</button>
 	</div>
 
 	<div id="content" ng-style="backgroundColor">
-		<div ng-class="{font1: cursive, font2: boldText, font3: thinText}" ng-style="textColor" class="previewText"> {{greetingsText}} </div>
+		<div ng-class="{font1: cursive, font2: boldText, font3: thinText, smallSize: small, mediumSize: medium, largeSize: large}" ng-style="textColor" class="previewText"> {{greetingsText}} </div>
 	</div>
 
 	<div id="iconArtBar">

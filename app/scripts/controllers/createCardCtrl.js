@@ -66,6 +66,9 @@ angular
 			  expect(ps.first().getAttribute('class')).not.toMatch(/font1/);
 			  expect(ps.first().getAttribute('class')).not.toMatch(/font2/);
 			  expect(ps.first().getAttribute('class')).not.toMatch(/font3/);
+			  expect(ps.first().getAttribute('class')).not.toMatch(/smallSize/);
+			  expect(ps.first().getAttribute('class')).not.toMatch(/mediumSize/);
+			  expect(ps.first().getAttribute('class')).not.toMatch(/largeSize/);
 
 			  element(by.model('cursive')).click();
 			  expect(ps.first().getAttribute('class')).toMatch(/font1/);
@@ -75,6 +78,15 @@ angular
 
 			  element(by.model('thinText')).click();
 			  expect(ps.first().getAttribute('class')).toMatch(/font3/);
+
+				element(by.model('small')).click();
+			  expect(ps.first().getAttribute('class')).toMatch(/smallSize/);
+
+			  element(by.model('medium')).click();
+			  expect(ps.first().getAttribute('class')).toMatch(/mediumSize/);	
+
+			  element(by.model('large')).click();
+			  expect(ps.first().getAttribute('class')).toMatch(/largeSize/);		  
 			});
 		};
 
