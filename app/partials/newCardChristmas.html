@@ -17,28 +17,31 @@
 		  </ul>
 	  </div>
 	  <div class="textAppendColor">
-	  <h4>Add some text!</h4>
-			<span>
-				<input ng-model="greetingsText"class="cardText" type="text" placeholder="Say something nice!">
-			</span>
-		<h4>Style your text!</h4>
-			<ul class="colorClick">
-			  <li><a ng-click="textColor={color:'red'}">Red</a></li>
-			  <li><a ng-click="textColor={color:'#FAAA49'}">Orange</a></li>
-			  <li><a ng-click="textColor={color:'#3C7AB2'}">Blue</a></li>
-			  <li><a ng-click="textColor={color:'#FFEDA1'}">Yellow</a></li>
-			  <li><a ng-click="textColor={color:'#1C9360'}">Green</a></li>
-			  <li><a ng-click="textColor={color:'magenta'}">Magenta</a></li>
-			  <li><a ng-click="textColor={color:'#B0DDED'}">Light Blue</a></li>
-			  <li><a ng-click="textColor={color:'white'}">White</a></li>
-		  </ul>
-		<h5>Text preview</h5>
-			<div ng-style="textColor" class="previewText"> {{greetingsText}} </div>
+		  <h4>Add some text!</h4>
+				<span>
+					<input ng-model="greetingsText" class="cardText" type="text" placeholder="Say something nice!">
+				</span>
+			<h4>Style your text!</h4>
+				<ul class="colorClick">
+				  <li><a ng-click="textColor={color:'red'}">Red</a></li>
+				  <li><a ng-click="textColor={color:'#FAAA49'}">Orange</a></li>
+				  <li><a ng-click="textColor={color:'#3C7AB2'}">Blue</a></li>
+				  <li><a ng-click="textColor={color:'#FFEDA1'}">Yellow</a></li>
+				  <li><a ng-click="textColor={color:'#1C9360'}">Green</a></li>
+				  <li><a ng-click="textColor={color:'magenta'}">Magenta</a></li>
+				  <li><a ng-click="textColor={color:'#B0DDED'}">Light Blue</a></li>
+				  <li><a ng-click="textColor={color:'white'}">White</a></li>
+			  </ul>
+		  <h4>Choose a font!</h4>
+		  <input type="checkbox" ng-model="cursive">
+		  <input type="checkbox" ng-model="boldText">
+		  <input type="checkbox" ng-model="thinText">
 		</div>
 		<button ng-click="appendText()">Add text</button>
 	</div>
 
 	<div id="content" ng-style="backgroundColor">
+		<div ng-class="{font1: cursive, font2: boldText, font3: thinText}" ng-style="textColor" class="previewText"> {{greetingsText}} </div>
 	</div>
 
 	<div id="iconArtBar">

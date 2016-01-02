@@ -32,7 +32,8 @@ angular
 		$scope.greetingsText = "";
 
 		$scope.appendText = function() {
-			var textItem = "<div ng-style='textColor' class='textToAppend'>" + $(".cardText").val() + "</div>";
+			var textItem = "<div class='textToAppend'>" + $(".cardText").val() + "</div>";
+			
 			$("#content").append(textItem);
 			$(".textToAppend").addClass("makeMeDraggable");
 			$(".textToAppend").append('<a><span class="delete glyphicon glyphicon-trash"></span></a>')
@@ -57,7 +58,26 @@ angular
 			$(".glyphicon-trash").click(function() {
 				$(this).parent().parent().remove();
 		 	})
+			
+			var ps = element.all(by.css('div'));
+
+			it('should check ng-class', function() {
+
+			  expect(ps.first().getAttribute('class')).not.toMatch(/font1/);
+			  expect(ps.first().getAttribute('class')).not.toMatch(/font2/);
+			  expect(ps.first().getAttribute('class')).not.toMatch(/font3/);
+
+			  element(by.model('cursive')).click();
+			  expect(ps.first().getAttribute('class')).toMatch(/font1/);
+
+			  element(by.model('boldText')).click();
+			  expect(ps.first().getAttribute('class')).toMatch(/font2/);
+
+			  element(by.model('thinText')).click();
+			  expect(ps.first().getAttribute('class')).toMatch(/font3/);
+			});
 		};
+
 
 
 		$scope.saveToProfile = function() {

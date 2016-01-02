@@ -56,6 +56,18 @@
   float: left;
 }
 
+.font1 {
+  font-family: 'Poiret One', cursive;
+}
+
+.font2 {
+  font-family: 'Abril Fatface', cursive;
+}
+
+.font3 {
+  font-family: 'Work Sans', 'sans-serif';
+}
+
 #iconArtBar {
   display: inline-block;
   height: 700px;
