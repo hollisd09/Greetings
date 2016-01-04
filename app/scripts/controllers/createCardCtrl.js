@@ -4,6 +4,7 @@ angular
 
 		$(".btn").click(function(){
 			var newItem = $(this).clone().appendTo("#content");
+
 			$(newItem).addClass("makeMeDraggable");
 			$(newItem).removeClass("btn");
 			$(newItem).prepend('<a><span class="delete glyphicon glyphicon-trash"></span></a>')
@@ -29,14 +30,14 @@ angular
 		 	})
 		}); 
 
-		$scope.greetingsText = "";
+
 
 		$scope.appendText = function() {
-			var textItem = "<div class='textToAppend'>" + $(".cardText").val() + "</div>";
+			var textItem = $(".previewText").clone().appendTo("#content");
 			
-			$("#content").append(textItem);
-			$(".textToAppend").addClass("makeMeDraggable");
-			$(".textToAppend").append('<a><span class="delete glyphicon glyphicon-trash"></span></a>')
+			$(textItem).addClass("makeMeDraggable");
+			$(textItem).removeClass("previewText");
+			$(textItem).append('<a><span class="delete glyphicon glyphicon-trash"></span></a>');
 			console.log("click worked?? WHO KNOWS");
 
 			$(".makeMeDraggable").draggable ({ 
@@ -46,7 +47,7 @@ angular
 			});
 
 			$(".glyphicon-trash").hide();
-			$(".textToAppend").on({
+			$(textItem).on({
 				mouseover: function() {
 					$(this).find(".glyphicon-trash").show();
 				},
@@ -58,37 +59,9 @@ angular
 			$(".glyphicon-trash").click(function() {
 				$(this).parent().parent().remove();
 		 	})
-			
-			var ps = element.all(by.css('div'));
+			$scope.greetingsText = ""
 
-			it('should check ng-class', function() {
-
-			  expect(ps.first().getAttribute('class')).not.toMatch(/font1/);
-			  expect(ps.first().getAttribute('class')).not.toMatch(/font2/);
-			  expect(ps.first().getAttribute('class')).not.toMatch(/font3/);
-			  expect(ps.first().getAttribute('class')).not.toMatch(/smallSize/);
-			  expect(ps.first().getAttribute('class')).not.toMatch(/mediumSize/);
-			  expect(ps.first().getAttribute('class')).not.toMatch(/largeSize/);
-
-			  element(by.model('cursive')).click();
-			  expect(ps.first().getAttribute('class')).toMatch(/font1/);
-
-			  element(by.model('boldText')).click();
-			  expect(ps.first().getAttribute('class')).toMatch(/font2/);
-
-			  element(by.model('thinText')).click();
-			  expect(ps.first().getAttribute('class')).toMatch(/font3/);
-
-				element(by.model('small')).click();
-			  expect(ps.first().getAttribute('class')).toMatch(/smallSize/);
-
-			  element(by.model('medium')).click();
-			  expect(ps.first().getAttribute('class')).toMatch(/mediumSize/);	
-
-			  element(by.model('large')).click();
-			  expect(ps.first().getAttribute('class')).toMatch(/largeSize/);		  
-			});
-		};
+	 };	
 
 
 
