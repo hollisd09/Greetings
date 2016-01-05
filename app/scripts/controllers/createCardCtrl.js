@@ -13,6 +13,7 @@ angular
 				containment: "#content", 
 				scroll: false,
 				stack: ".makeMeDraggable",
+				zIndex: 100,
 			});
 			
 			$(".glyphicon-trash").hide();
@@ -44,6 +45,7 @@ angular
 				containment: "#content", 
 				scroll: false,
 				stack: ".makeMeDraggable",
+				zIndex: 100,
 			});
 
 			$(".glyphicon-trash").hide();

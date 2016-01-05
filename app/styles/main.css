@@ -22,7 +22,6 @@
   display: inline-block;
   width: 800px;
   height: 700px;
-  position: relative;
   background-color: white;
   border: 1px solid #CCCBCB;
   margin-top: 40px;
@@ -68,6 +67,10 @@
   font-family: 'Work Sans', 'sans-serif';
 }
 
+.font4 {
+  font-family: 'Tangerine', cursive;
+}
+
 .smallSize {
   font-size: 12px;
 }
@@ -100,6 +103,11 @@
   position: absolute;
   top: 0px;
   right: 0px;
+  width: 10px;
+}
+
+.delete {
+  padding-left: 20px;
 }
 
 
@@ -127,17 +135,9 @@ button.submitLogin {
 	margin-right: 5px;
 }
 
-#deleteArea {
-  height: 100px;
-  width: 800px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  border: 1px solid red;
-}
-
 .makeMeDraggable {
   display: inline-block;
+  position: absolute;
 }
 
 #printable {
@@ -186,4 +186,8 @@ li {
 #cardViewed {
   border: 1px solid #CCCBCB;
   margin-top: 30px;
+}
+
+img {
+  vertical-align: none;
 }

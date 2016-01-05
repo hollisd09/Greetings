@@ -34,23 +34,12 @@
 			  </ul>
 		  <h4>Choose a font!</h4>
 
-<!-- <span class="fontType">
-			  <span><input type="checkbox" name="font" ng-model="cursive">Poriet One</span>
-			  <span><input type="checkbox" name="font" ng-model="boldText">Abril Fatface</span>
-			  <span><input type="checkbox" name="font" ng-model="thinText">Work Sans</span>
-		  </span> -->
-
 		  <span class="fontType">
 			  <span><input type="radio" name="font" ng-model="font" value="cursive">Poriet One</span>
 			  <span><input type="radio" name="font" ng-model="font" value="boldText">Abril Fatface</span>
 			  <span><input type="radio" name="font" ng-model="font" value="thinText">Work Sans</span>
+			  <span><input type="radio" name="font" ng-model="font" value="fancyText">Tangerine</span>
 		  </span> 
-
-<!-- 		<span class="pickSize">
-			  <span><input type="checkbox" name="size" ng-model="small">Small</span>
-			  <span><input type="checkbox" name="size" ng-model="medium">Medium</span>
-			  <span><input type="checkbox" name="size" ng-model="large">Large</span>
-		  </span> -->
 
 		  <h4>Choose a size!</h4>
 		  <span class="pickSize">
@@ -64,7 +53,7 @@
 	</div>
 
 	<div id="content" ng-style="backgroundColor">
-		<div ng-class="{font1: font === 'cursive', font2: font === 'boldText', font3: font === 'thinText', smallSize: fontsize === 'small', mediumSize: fontsize === 'medium', largeSize: fontsize === 'large'}" ng-style="textColor" class="previewText"> {{greetingsText}}</div>
+		<div ng-class="{font1: font === 'cursive', font2: font === 'boldText', font3: font === 'thinText', font4: font === 'fancyText', smallSize: fontsize === 'small', mediumSize: fontsize === 'medium', largeSize: fontsize === 'large'}" ng-style="textColor" class="previewText"> {{greetingsText}}</div>
 	</div>
 
 
