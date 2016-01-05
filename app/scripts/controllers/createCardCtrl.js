@@ -1,6 +1,6 @@
 angular
 	.module('greetingsApp')
-	.controller('CreateCardCtrl', function($scope, Auth, $firebaseArray, getUid, $rootScope) {
+	.controller('CreateCardCtrl', function($scope, Auth, $firebaseArray, getUid, $rootScope, $location) {
 
 		$(".btn").click(function(){
 			var newItem = $(this).clone().appendTo("#content");

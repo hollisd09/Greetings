@@ -17,16 +17,43 @@
 		  </ul>
 	  </div>
 	  <div class="textAppendColor">
-	  <h4>Add some text!</h4>
-			<span>
-				<input class="cardText" type="text" placeholder="Say something nice!">
-				<button ng-click="appendText()">Add text</button>
-			</span>
+		  <h4>Add some text!</h4>
+				<span>
+					<input ng-model="greetingsText" class="cardText" type="text" placeholder="Say something nice!">
+				</span>
+			<h4>Style your text!</h4>
+				<ul class="colorClick">
+				  <li><a ng-click="textColor={color:'red'}">Red</a></li>
+				  <li><a ng-click="textColor={color:'#FAAA49'}">Orange</a></li>
+				  <li><a ng-click="textColor={color:'#3C7AB2'}">Blue</a></li>
+				  <li><a ng-click="textColor={color:'#FFEDA1'}">Yellow</a></li>
+				  <li><a ng-click="textColor={color:'#1C9360'}">Green</a></li>
+				  <li><a ng-click="textColor={color:'magenta'}">Magenta</a></li>
+				  <li><a ng-click="textColor={color:'#B0DDED'}">Light Blue</a></li>
+				  <li><a ng-click="textColor={color:'white'}">White</a></li>
+			  </ul>
+		  <h4>Choose a font!</h4>
+
+		  <span class="fontType">
+			  <span><input type="radio" name="font" ng-model="font" value="cursive">Poriet One</span>
+			  <span><input type="radio" name="font" ng-model="font" value="boldText">Abril Fatface</span>
+			  <span><input type="radio" name="font" ng-model="font" value="thinText">Work Sans</span>
+			  <span><input type="radio" name="font" ng-model="font" value="fancyText">Tangerine</span>
+		  </span> 
+
+		  <h4>Choose a size!</h4>
+		  <span class="pickSize">
+			  <span><input type="radio" name="fontsize" ng-model="fontsize" value="small">Small</span>
+			  <span><input type="radio" name="fontsize" ng-model="fontsize" value="medium">Medium</span>
+			  <span><input type="radio" name="fontsize" ng-model="fontsize" value="large">Large</span>
+		  </span> 
+
 		</div>
+		<button ng-click="appendText()">Add text</button>
 	</div>
-		
 
 	<div id="content" ng-style="backgroundColor">
+		<div ng-class="{font1: font === 'cursive', font2: font === 'boldText', font3: font === 'thinText', font4: font === 'fancyText', smallSize: fontsize === 'small', mediumSize: fontsize === 'medium', largeSize: fontsize === 'large'}" ng-style="textColor" class="previewText"> {{greetingsText}}</div>
 	</div>
 
 	<div id="iconArtBar">

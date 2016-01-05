@@ -1,6 +1,6 @@
 {
   "firebase": "greetings",
-  "public": "Greetings,
+  "public": "Greetings",
   "ignore": [
     "firebase.json",
     "**/.*",
