@@ -1,0 +1,34 @@
+{
+  "name": "greetings",
+  "version": "2.0.0",
+  "description": "A web based greeting card app!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hollisd09/Greetings.git"
+  },
+  "author": "Danielle Hollis <hollisd09@gmail.com> (http://www.hollisdesignsstudio.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hollisd09/Greetings/issues"
+  },
+  "homepage": "https://github.com/hollisd09/Greetings#readme",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.15.0",
+    "connect-redis": "^3.0.2",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.4.10",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "nodemon": "^1.9.1"
+  }
+}
